@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <GenreBar genre="Movies" />
         <Gallery genre="Action" query="money" />
-        <Gallery genre="Kids" query="hero" />
+        <Gallery genre="Kids" query="cartoon" />
         <Gallery genre="Romance" query="love" />
         <Footer />
       </div>

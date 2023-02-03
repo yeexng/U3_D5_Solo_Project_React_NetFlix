@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import Container from 'react-bootstrap/esm/Container';
+import { Facebook,Instagram,Twitter,Github, Youtube } from 'react-bootstrap-icons';
 
 export default function Footer() {
   return (
@@ -13,23 +14,20 @@ export default function Footer() {
         </div>
 
         <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='facebook-f' />
+          <a href='#' className='mx-1 text-light'>
+            <Facebook></Facebook>
           </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='twitter' />
+          <a href='#' className='mx-1 text-light'>
+            <Instagram></Instagram>
           </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='google' />
+          <a href='#' className='mx-1 text-light'>
+            <Twitter></Twitter>
           </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='instagram' />
+          <a href='#' className='mx-1 text-light'>
+            <Github></Github>
           </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='linkedin' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='github' />
+          <a href='#' className='mx-1 text-light'>
+            <Youtube></Youtube>
           </a>
         </div>
       </section>
@@ -118,9 +116,9 @@ export default function Footer() {
       </section>
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © 2021 Copyright:
+        © 2023 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+          Xuan.nG
         </a>
       </div>
     </MDBFooter>
