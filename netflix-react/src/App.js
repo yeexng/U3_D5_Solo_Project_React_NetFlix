@@ -12,9 +12,9 @@ function App() {
       <div className="bg-dark">
         <NavBar />
         <GenreBar genre="Movies" />
-        <Gallery genre="Movie" query="money" />
+        <Gallery genre="Action" query="money" />
         <Gallery genre="Kids" query="hero" />
-        <Gallery genre="Action" query="cute" />
+        <Gallery genre="Romance" query="love" />
         <Footer />
       </div>
     </>

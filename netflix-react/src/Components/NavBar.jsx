@@ -3,13 +3,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Search, BellFill } from "react-bootstrap-icons";
+import '../Css/NavBar.css'
 
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
         <Navbar.Brand>
-          <img src="/netflix-react/public/assets/netflix_logo.png" alt="logo"/>
+          <img className="logo" src="/assets/netflix_logo.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,14 +26,14 @@ const NavBar = () => {
             <Nav.Link href="#">KIDS</Nav.Link>
             <Nav.Link href="#"><BellFill></BellFill></Nav.Link>
             <NavDropdown title="User" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">U_U</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                OwO
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">^3^</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                ¬_¬
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

@@ -18,9 +18,9 @@ function GenreBar(props) {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">U_U</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">OwO</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">T_T</Dropdown.Item>
         </Dropdown.Menu>
         </Dropdown>
         </div>
