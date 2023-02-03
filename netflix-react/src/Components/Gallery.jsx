@@ -2,11 +2,15 @@ import { Component } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
+import Spinner from "react-bootstrap/esm/Spinner"
+import Alert from "react-bootstrap/esm/Alert"
 
 class Gallery extends Component{
 
     state = {
-        movie:[]
+        movie:[],
+        isLoading: true,
+        isError: false,
     }
 
     fetchMovies = async () => {
@@ -20,11 +24,21 @@ class Gallery extends Component{
                 this.setState({
                     movie: data.Search,
                     // is an object with the "Search" property to get to the array
+                    isLoading: false,
                 })
+            } else{
+                this.setState({
+                    isLoading: false,
+                    isError: true,
+                  })
             }
         }catch(error){
-        console.log(error)}
-    }
+        console.log(error)
+        this.setState({
+            isLoading: false,
+            isError: true,
+          })
+    }}
 
     componentDidMount(){
         this.fetchMovies()
@@ -34,6 +48,14 @@ class Gallery extends Component{
     render(){
         return(
             <Container fluid>
+
+        {this.state.isLoading && ( // isLoading is true or false
+                <Spinner animation="border" variant="success" />
+                )}
+                {this.state.isError && (
+                <Alert variant="danger">Aww snap, we got an error!😨</Alert>
+                )}
+
 
                 <Col sm={12} md={12} lg={12}><h5 className="text-light mt-5">{this.props.genre}</h5></Col>
                 
