@@ -2,12 +2,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Search, BellFill } from "react-bootstrap-icons";
 
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
-        <Navbar.Brand>Logo</Navbar.Brand>
+        <Navbar.Brand>
+          <img src="/netflix-react/public/assets/netflix_logo.png" alt="logo"/>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -18,9 +21,9 @@ const NavBar = () => {
             <Nav.Link href="#">My List</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="#">Search Icon</Nav.Link>
+            <Nav.Link href="#"><Search></Search></Nav.Link>
             <Nav.Link href="#">KIDS</Nav.Link>
-            <Nav.Link href="#">Bell Icon</Nav.Link>
+            <Nav.Link href="#"><BellFill></BellFill></Nav.Link>
             <NavDropdown title="User" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
