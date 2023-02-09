@@ -1,21 +1,44 @@
 import "./App.css";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./Components/NavBar.jsx";
 import GenreBar from "./Components/GenreBar";
 import Footer from "./Components/Footer";
 import Gallery from "./Components/Gallery";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TVShows from "./Components/TVShows";
+import MovieDetails from "./Components/MovieDetails";
 
 function App() {
   return (
     <>
       <div className="bg-dark">
-        <NavBar />
-        <GenreBar genre="Movies" />
-        <Gallery genre="Action" query="money" />
-        <Gallery genre="Kids" query="cartoon" />
-        <Gallery genre="Romance" query="love" />
-        <Footer />
+        <BrowserRouter>
+          <NavBar />
+          <GenreBar genre="Movies" />
+          <Routes>
+            <Route
+              element={<Gallery genre="Action" query="money" />}
+              path="/"
+            />
+          </Routes>
+          <Routes>
+            <Route
+              element={<Gallery genre="Kids" query="cartoon" />}
+              path="/"
+            />
+          </Routes>
+          <Routes>
+            <Route
+              element={<Gallery genre="Romance" query="love" />}
+              path="/"
+            />
+          </Routes>
+          <Routes>
+            <Route element={<TVShows />} path="/tv-shows" />
+            <Route element={<MovieDetails />} path="/movie-details/:movieId" />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
       </div>
     </>
   );

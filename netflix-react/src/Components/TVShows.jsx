@@ -6,7 +6,7 @@ import Row from "react-bootstrap/esm/Row";
 import Spinner from "react-bootstrap/esm/Spinner"
 import Alert from "react-bootstrap/esm/Alert"
 
-const Gallery = (props) => {
+const TVShows = () =>{
 
     const navigate = useNavigate()
 
@@ -14,11 +14,11 @@ const Gallery = (props) => {
     const [isLoading,setIsLoading] = useState (true)
     const [isError,setIserror] = useState (false)
 
-    const fetchMovies = async () => {
+    const getMovies =async ()=>{
         try{
-            let response = await fetch("http://www.omdbapi.com/?apikey=bda9b329&s=" + props.query)
+            let response = await fetch("http://www.omdbapi.com/?apikey=bda9b329&s=series")
             console.log(response)
-             if (response.ok){
+            if (response.ok){
                 let data = await response.json()
                 console.log(data)
                 setMovies(data.Search)
@@ -34,10 +34,9 @@ const Gallery = (props) => {
     }}
 
     useEffect(()=>{
-        fetchMovies()
+        getMovies()
     },[])
-
-
+    
     return(
         <Container fluid>
 
@@ -49,12 +48,12 @@ const Gallery = (props) => {
             )}
 
 
-            <Col sm={12} md={12} lg={12}><h5 className="text-light mt-5">{props.genre}</h5></Col>
+            <Col sm={12} md={12} lg={12}><h5 className="text-light mt-5">TV Series</h5></Col>
             
             <Row>
                 
 
-                {movies ? movies.slice(0,6).map((res)=>{
+                {movies ? movies.map((res)=>{
                     return (
                         <Col sm={5} md={3} lg={3} xl={2} key={res.imdbID} className="p-0" onClick={()=>{navigate(`/movie-details/${res.imdbID}`)}}
                         >
@@ -68,7 +67,7 @@ const Gallery = (props) => {
             </Row>
         </Container>
     )
-    
+
 }
 
-export default Gallery
+export default TVShows
