@@ -17,7 +17,7 @@ function App() {
           <GenreBar genre="Movies" />
           <Routes>
             <Route
-              element={<Gallery genre="Action" query="money" />}
+              element={<Gallery genre="Action"/>}
               path="/"
             />
           </Routes>

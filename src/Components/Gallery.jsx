@@ -22,7 +22,7 @@ const Gallery = (props) => {
       if (response.ok) {
         let data = await response.json();
         console.log(data);
-        setMovies(data.Search);
+        setMovies(data);
         setIsLoading(false);
       } else {
         setIsLoading(false);
