@@ -15,7 +15,7 @@ const Gallery = (props) => {
 
   const fetchMovies = async () => {
     try {
-      let response = await fetch(process.env.VERCEL_URL + "/medias");
+      let response = await fetch(process.env.VERCEL_URL);
       console.log(response);
       if (response.ok) {
         let data = await response.json();
@@ -60,7 +60,7 @@ const Gallery = (props) => {
                   key={res.imdbID}
                   className="p-0"
                   onClick={() => {
-                    navigate(`/medias/${res.imdbID}`);
+                    navigate(`/movie-details/${res.imdbID}`);
                   }}
                 >
                   <img className="img-fluid" src={res.poster} alt={res.title} />
