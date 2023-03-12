@@ -15,9 +15,7 @@ const Gallery = (props) => {
 
   const fetchMovies = async () => {
     try {
-      let response = await fetch(
-        "https://long-plum-chimpanzee-tie.cyclic.app/medias"
-      );
+      let response = await fetch(process.env.VERCEL_URL);
       console.log(response);
       if (response.ok) {
         let data = await response.json();
