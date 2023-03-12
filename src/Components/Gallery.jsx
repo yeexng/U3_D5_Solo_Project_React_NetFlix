@@ -15,7 +15,7 @@ const Gallery = (props) => {
 
   const fetchMovies = async () => {
     try {
-      let response = await fetch(process.env.VERCEL_URL);
+      let response = await fetch(`${process.env.CYCLIC_URL}`);
       console.log(response);
       if (response.ok) {
         let data = await response.json();
