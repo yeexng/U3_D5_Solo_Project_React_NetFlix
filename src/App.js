@@ -16,10 +16,7 @@ function App() {
           <NavBar />
           <GenreBar genre="Movies" />
           <Routes>
-            <Route
-              element={<Gallery genre="Action"/>}
-              path="/"
-            />
+            <Route element={<Gallery genre="Action" />} path="/" />
           </Routes>
           <Routes>
             <Route
@@ -35,7 +32,7 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<TVShows />} path="/tv-shows" />
-            <Route element={<MovieDetails />} path="/movie-details/:movieId" />
+            <Route element={<MovieDetails />} path="/:movieId" />
           </Routes>
           <Footer />
         </BrowserRouter>
