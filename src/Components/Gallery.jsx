@@ -16,7 +16,7 @@ const Gallery = (props) => {
   const fetchMovies = async () => {
     try {
       let response = await fetch(
-        "https://long-plum-chimpanzee-tie.cyclic.app/" + props.query
+        "https://long-plum-chimpanzee-tie.cyclic.app/medias"
       );
       console.log(response);
       if (response.ok) {
