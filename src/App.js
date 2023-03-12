@@ -32,7 +32,7 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<TVShows />} path="/tv-shows" />
-            <Route element={<MovieDetails />} path="/:movieId" />
+            <Route element={<MovieDetails />} path="/medias/:movieId" />
           </Routes>
           <Footer />
         </BrowserRouter>
