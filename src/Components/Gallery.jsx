@@ -62,7 +62,7 @@ const Gallery = (props) => {
                   key={res.imdbID}
                   className="p-0"
                   onClick={() => {
-                    navigate(`/movie-details/${res.imdbID}`);
+                    navigate(`/${res.imdbID}`);
                   }}
                 >
                   <img className="img-fluid" src={res.poster} alt={res.title} />
