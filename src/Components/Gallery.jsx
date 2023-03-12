@@ -65,7 +65,7 @@ const Gallery = (props) => {
                     navigate(`/movie-details/${res.imdbID}`);
                   }}
                 >
-                  <img className="img-fluid" src={res.Poster} alt={res.Title} />
+                  <img className="img-fluid" src={res.poster} alt={res.title} />
                 </Col>
               );
             })
