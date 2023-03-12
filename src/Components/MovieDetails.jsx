@@ -18,7 +18,9 @@ const MovieDetails = () => {
 
   const fetchMovie = async () => {
     try {
-      let response = await fetch(process.env.CYCLIC_URL + params.movieId);
+      let response = await fetch(
+        "https://long-plum-chimpanzee-tie.cyclic.app/medias" + params.movieId
+      );
       console.log(response);
       if (response.ok) {
         let rawData = await response.json();
