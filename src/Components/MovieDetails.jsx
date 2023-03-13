@@ -63,19 +63,19 @@ const MovieDetails = () => {
             <Row>
               <Col>
                 <h2 className="text-light text-center">
-                  Details of {movieToShow.Title}
+                  Details of {movieToShow.title}
                 </h2>
 
                 <Card>
                   <Card.Img
                     variant="top"
-                    src={movieToShow.Poster}
+                    src={movieToShow.poster}
                     // width={}
                     height={800}
                   />
                   <Card.Body className="background">
                     <Card.Title>
-                      {movieToShow.Title} {movieToShow.Type} -{" "}
+                      {movieToShow.title} {movieToShow.type} -{" "}
                     </Card.Title>
                     <Card.Text>
                       <Badge className="bg-secondary mr-2">
