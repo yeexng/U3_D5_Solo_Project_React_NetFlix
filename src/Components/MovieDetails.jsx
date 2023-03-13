@@ -19,7 +19,7 @@ const MovieDetails = () => {
   const fetchMovie = async () => {
     try {
       let response = await fetch(
-        "https://long-plum-chimpanzee-tie.cyclic.app/medias/" + params.movieId
+        process.env.REACT_APP_BE_URL + "/medias/" + params.movieId
       );
       console.log(response);
       if (response.ok) {
@@ -35,16 +35,12 @@ const MovieDetails = () => {
 
   const movieComments = async () => {
     let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/comments/" + params.movieId,
-      {
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5NGRkNWU3MzczODAwMTUzNzQ0MDYiLCJpYXQiOjE2NzUzNDYyODcsImV4cCI6MTY3NjU1NTg4N30.oaVIhmVyxOUdFP1mjGKJ2ncKPQY6Fz8qEyWjoCTuLcU",
-        },
-      }
+      process.env.REACT_APP_BE_URL + "/medias/" + params.movieId + "/comments"
     );
+    console.log(res);
     if (res.ok) {
-      let data = await res.json();
+      let rawData = await res.json();
+      let data = rawData;
       console.log(data);
       setComments(data);
     }
@@ -97,9 +93,16 @@ const MovieDetails = () => {
                     <ListGroup>
                       {comments.map((comment) => {
                         return (
-                          <ListGroup key={comment._id}>
+                          <ListGroup key={comment.comment_id}>
                             <p>
-                              <strong> Comment:</strong> {comment.comment}
+                              <strong> Comment:</strong>
+                              <br /> {comment.comment}
+                              <br />
+                              Rating: {comment.rate}
+                              <br />
+                              by
+                              <br />
+                              {comment.name}
                             </p>
                           </ListGroup>
                         );
